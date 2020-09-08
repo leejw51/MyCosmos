@@ -11,8 +11,8 @@ import (
 	"github.com/tendermint/tendermint/libs/cli"
 
 	"github.com/cosmos/cosmos-sdk/client/flags"
-	"github.com/cosmos/cosmos-sdk/crypto/keys"
 	"github.com/cosmos/cosmos-sdk/codec"
+	"github.com/cosmos/cosmos-sdk/crypto/keys"
 	"github.com/cosmos/cosmos-sdk/server"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/x/auth"
@@ -82,7 +82,7 @@ contain valid denominations. Accounts may optionally be supplied with vesting pa
 
 			// create concrete account type based on input parameters
 			var genAccount authexported.GenesisAccount
-
+			fmt.Println("NewBaseAccount-----------------------------------")
 			baseAccount := auth.NewBaseAccount(addr, coins.Sort(), nil, 0, 0)
 			if !vestingAmt.IsZero() {
 				baseVestingAccount, err := authvesting.NewBaseVestingAccount(baseAccount, vestingAmt.Sort(), vestingEnd)
@@ -110,6 +110,7 @@ contain valid denominations. Accounts may optionally be supplied with vesting pa
 
 			genFile := config.GenesisFile()
 			appState, genDoc, err := genutil.GenesisStateFromGenFile(cdc, genFile)
+			fmt.Println("********************")
 			if err != nil {
 				return fmt.Errorf("failed to unmarshal genesis state: %w", err)
 			}

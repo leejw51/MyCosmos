@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"io"
 
 	"github.com/spf13/cobra"
@@ -31,6 +32,7 @@ const flagInvCheckPeriod = "inv-check-period"
 var invCheckPeriod uint
 
 func main() {
+	fmt.Println("-------------------------------------")
 	cdc := app.MakeCodec()
 
 	app.SetConfig()
@@ -67,6 +69,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+	fmt.Println("Done blogd----------------------------")
 }
 
 func newApp(logger log.Logger, db dbm.DB, traceStore io.Writer) abci.Application {

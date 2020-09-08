@@ -7,3 +7,7 @@ const (QueryListComment = "list-comment")
 		
 const (QueryListAsset = "list-asset")
 		
+const (QueryListBuy = "list-buy")
+		
+const (QueryListSell = "list-sell")
+		

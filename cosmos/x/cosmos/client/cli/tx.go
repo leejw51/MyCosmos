@@ -23,6 +23,8 @@ func GetTxCmd(cdc *codec.Codec) *cobra.Command {
 
 	cosmosTxCmd.AddCommand(flags.PostCommands(
     // this line is used by starport scaffolding
+		GetCmdCreateSell(cdc),
+		GetCmdCreateBuy(cdc),
 		GetCmdCreateAsset(cdc),
 		GetCmdCreateComment(cdc),
 		GetCmdCreatePost(cdc),

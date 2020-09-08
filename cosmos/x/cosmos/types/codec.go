@@ -7,6 +7,8 @@ import (
 // RegisterCodec registers concrete types on codec
 func RegisterCodec(cdc *codec.Codec) {
   // this line is used by starport scaffolding
+		cdc.RegisterConcrete(MsgCreateSell{}, "cosmos/CreateSell", nil)
+		cdc.RegisterConcrete(MsgCreateBuy{}, "cosmos/CreateBuy", nil)
 		cdc.RegisterConcrete(MsgCreateAsset{}, "cosmos/CreateAsset", nil)
 		cdc.RegisterConcrete(MsgCreateComment{}, "cosmos/CreateComment", nil)
 		cdc.RegisterConcrete(MsgCreatePost{}, "cosmos/CreatePost", nil)

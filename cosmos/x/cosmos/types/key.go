@@ -26,3 +26,11 @@ const (
 	AssetPrefix = "asset-"
 )
 		
+const (
+	BuyPrefix = "buy-"
+)
+		
+const (
+	SellPrefix = "sell-"
+)
+		

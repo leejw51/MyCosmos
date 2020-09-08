@@ -30,6 +30,8 @@ func GetQueryCmd(queryRoute string, cdc *codec.Codec) *cobra.Command {
 	cosmosQueryCmd.AddCommand(
 		flags.GetCommands(
       // this line is used by starport scaffolding
+			GetCmdListSell(queryRoute, cdc),
+			GetCmdListBuy(queryRoute, cdc),
 			GetCmdListAsset(queryRoute, cdc),
 			GetCmdListComment(queryRoute, cdc),
 			GetCmdListPost(queryRoute, cdc),

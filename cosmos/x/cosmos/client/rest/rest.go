@@ -9,6 +9,10 @@ import (
 // RegisterRoutes registers cosmos-related REST handlers to a router
 func RegisterRoutes(cliCtx context.CLIContext, r *mux.Router) {
   // this line is used by starport scaffolding
+	r.HandleFunc("/cosmos/sell", listSellHandler(cliCtx, "cosmos")).Methods("GET")
+	r.HandleFunc("/cosmos/sell", createSellHandler(cliCtx)).Methods("POST")
+	r.HandleFunc("/cosmos/buy", listBuyHandler(cliCtx, "cosmos")).Methods("GET")
+	r.HandleFunc("/cosmos/buy", createBuyHandler(cliCtx)).Methods("POST")
 	r.HandleFunc("/cosmos/asset", listAssetHandler(cliCtx, "cosmos")).Methods("GET")
 	r.HandleFunc("/cosmos/asset", createAssetHandler(cliCtx)).Methods("POST")
 	r.HandleFunc("/cosmos/comment", listCommentHandler(cliCtx, "cosmos")).Methods("GET")
